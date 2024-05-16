@@ -98,7 +98,6 @@
             this.button_a.TabStop = false;
             this.button_a.Text = "a";
             this.button_a.UseVisualStyleBackColor = true;
-            this.button_a.Click += new System.EventHandler(this.button_a_Click);
             // 
             // button_b
             // 
@@ -109,7 +108,6 @@
             this.button_b.TabStop = false;
             this.button_b.Text = "b";
             this.button_b.UseVisualStyleBackColor = true;
-            this.button_b.Click += new System.EventHandler(this.button_b_Click);
             // 
             // button_g
             // 
@@ -120,7 +118,6 @@
             this.button_g.TabStop = false;
             this.button_g.Text = "g";
             this.button_g.UseVisualStyleBackColor = true;
-            this.button_g.Click += new System.EventHandler(this.button_g_Click);
             // 
             // button_h
             // 
@@ -131,7 +128,6 @@
             this.button_h.TabStop = false;
             this.button_h.Text = "h";
             this.button_h.UseVisualStyleBackColor = true;
-            this.button_h.Click += new System.EventHandler(this.button_h_Click);
             // 
             // groupBox_abgh
             // 
@@ -166,7 +162,6 @@
             this.button_d.TabStop = false;
             this.button_d.Text = "d";
             this.button_d.UseVisualStyleBackColor = true;
-            this.button_d.Click += new System.EventHandler(this.button_d_Click);
             // 
             // buttonj
             // 
@@ -177,7 +172,6 @@
             this.buttonj.TabStop = false;
             this.buttonj.Text = "j";
             this.buttonj.UseVisualStyleBackColor = true;
-            this.buttonj.Click += new System.EventHandler(this.buttonj_Click);
             // 
             // button_c
             // 
@@ -188,7 +182,6 @@
             this.button_c.TabStop = false;
             this.button_c.Text = "c";
             this.button_c.UseVisualStyleBackColor = true;
-            this.button_c.Click += new System.EventHandler(this.button_c_Click);
             // 
             // button_i
             // 
@@ -199,7 +192,6 @@
             this.button_i.TabStop = false;
             this.button_i.Text = "i";
             this.button_i.UseVisualStyleBackColor = true;
-            this.button_i.Click += new System.EventHandler(this.button_i_Click);
             // 
             // groupBox_efkl
             // 
@@ -222,7 +214,6 @@
             this.button_f.TabStop = false;
             this.button_f.Text = "f";
             this.button_f.UseVisualStyleBackColor = true;
-            this.button_f.Click += new System.EventHandler(this.button_f_Click);
             // 
             // button_l
             // 
@@ -233,7 +224,6 @@
             this.button_l.TabStop = false;
             this.button_l.Text = "l";
             this.button_l.UseVisualStyleBackColor = true;
-            this.button_l.Click += new System.EventHandler(this.button_l_Click);
             // 
             // button_e
             // 
@@ -244,7 +234,6 @@
             this.button_e.TabStop = false;
             this.button_e.Text = "e";
             this.button_e.UseVisualStyleBackColor = true;
-            this.button_e.Click += new System.EventHandler(this.button_e_Click);
             // 
             // button_k
             // 
@@ -255,7 +244,6 @@
             this.button_k.TabStop = false;
             this.button_k.Text = "k";
             this.button_k.UseVisualStyleBackColor = true;
-            this.button_k.Click += new System.EventHandler(this.button_k_Click);
             // 
             // groupBox_epuv
             // 
@@ -278,7 +266,6 @@
             this.button_p.TabStop = false;
             this.button_p.Text = "p";
             this.button_p.UseVisualStyleBackColor = true;
-            this.button_p.Click += new System.EventHandler(this.button_p_Click);
             // 
             // button_v
             // 
@@ -288,7 +275,6 @@
             this.button_v.TabIndex = 3;
             this.button_v.Text = "v";
             this.button_v.UseVisualStyleBackColor = true;
-            this.button_v.Click += new System.EventHandler(this.button_v_Click);
             // 
             // button_o
             // 
@@ -299,7 +285,6 @@
             this.button_o.TabStop = false;
             this.button_o.Text = "o";
             this.button_o.UseVisualStyleBackColor = true;
-            this.button_o.Click += new System.EventHandler(this.button_o_Click);
             // 
             // button_u
             // 
@@ -309,7 +294,6 @@
             this.button_u.TabIndex = 2;
             this.button_u.Text = "u";
             this.button_u.UseVisualStyleBackColor = true;
-            this.button_u.Click += new System.EventHandler(this.button_u_Click);
             // 
             // groupBox_qrwx
             // 
@@ -332,7 +316,6 @@
             this.button_r.TabStop = false;
             this.button_r.Text = "r";
             this.button_r.UseVisualStyleBackColor = true;
-            this.button_r.Click += new System.EventHandler(this.button_r_Click);
             // 
             // button_x
             // 
@@ -343,7 +326,6 @@
             this.button_x.TabStop = false;
             this.button_x.Text = "x";
             this.button_x.UseVisualStyleBackColor = true;
-            this.button_x.Click += new System.EventHandler(this.button_x_Click);
             // 
             // button_q
             // 
@@ -354,7 +336,6 @@
             this.button_q.TabStop = false;
             this.button_q.Text = "q";
             this.button_q.UseVisualStyleBackColor = true;
-            this.button_q.Click += new System.EventHandler(this.button_q_Click);
             // 
             // button_w
             // 
@@ -365,7 +346,6 @@
             this.button_w.TabStop = false;
             this.button_w.Text = "w";
             this.button_w.UseVisualStyleBackColor = true;
-            this.button_w.Click += new System.EventHandler(this.button_w_Click);
             // 
             // groupBox_mnst
             // 
@@ -388,7 +368,6 @@
             this.button_n.TabStop = false;
             this.button_n.Text = "n";
             this.button_n.UseVisualStyleBackColor = true;
-            this.button_n.Click += new System.EventHandler(this.button_n_Click);
             // 
             // button_t
             // 
@@ -399,7 +378,6 @@
             this.button_t.TabStop = false;
             this.button_t.Text = "t";
             this.button_t.UseVisualStyleBackColor = true;
-            this.button_t.Click += new System.EventHandler(this.button_t_Click);
             // 
             // button_m
             // 
@@ -410,7 +388,6 @@
             this.button_m.TabStop = false;
             this.button_m.Text = "m";
             this.button_m.UseVisualStyleBackColor = true;
-            this.button_m.Click += new System.EventHandler(this.button_m_Click);
             // 
             // button_s
             // 
@@ -421,7 +398,6 @@
             this.button_s.TabStop = false;
             this.button_s.Text = "s";
             this.button_s.UseVisualStyleBackColor = true;
-            this.button_s.Click += new System.EventHandler(this.button_s_Click);
             // 
             // groupBox_sd
             // 
@@ -472,7 +448,6 @@
             this.button_delete.TabStop = false;
             this.button_delete.Text = "🡸";
             this.button_delete.UseVisualStyleBackColor = true;
-            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
             // groupBox_symbol
             // 
@@ -495,7 +470,6 @@
             this.button_cp.TabStop = false;
             this.button_cp.Text = ")";
             this.button_cp.UseVisualStyleBackColor = true;
-            this.button_cp.Click += new System.EventHandler(this.button_cp_Click);
             // 
             // button_minus
             // 
@@ -506,7 +480,6 @@
             this.button_minus.TabStop = false;
             this.button_minus.Text = "-";
             this.button_minus.UseVisualStyleBackColor = true;
-            this.button_minus.Click += new System.EventHandler(this.button_minus_Click);
             // 
             // button_op
             // 
@@ -517,7 +490,6 @@
             this.button_op.TabStop = false;
             this.button_op.Text = "(";
             this.button_op.UseVisualStyleBackColor = true;
-            this.button_op.Click += new System.EventHandler(this.button_op_Click);
             // 
             // button_plus
             // 
@@ -528,7 +500,6 @@
             this.button_plus.TabStop = false;
             this.button_plus.Text = "+";
             this.button_plus.UseVisualStyleBackColor = true;
-            this.button_plus.Click += new System.EventHandler(this.button_plus_Click);
             // 
             // groupBox_yz
             // 
@@ -551,7 +522,6 @@
             this.button_z.TabStop = false;
             this.button_z.Text = "z";
             this.button_z.UseVisualStyleBackColor = true;
-            this.button_z.Click += new System.EventHandler(this.button_z_Click);
             // 
             // button_comma
             // 
@@ -562,7 +532,6 @@
             this.button_comma.TabStop = false;
             this.button_comma.Text = ",";
             this.button_comma.UseVisualStyleBackColor = true;
-            this.button_comma.Click += new System.EventHandler(this.button_comma_Click);
             // 
             // button_y
             // 
@@ -573,7 +542,6 @@
             this.button_y.TabStop = false;
             this.button_y.Text = "y";
             this.button_y.UseVisualStyleBackColor = true;
-            this.button_y.Click += new System.EventHandler(this.button_y_Click);
             // 
             // button_dot
             // 
@@ -584,7 +552,6 @@
             this.button_dot.TabStop = false;
             this.button_dot.Text = ".";
             this.button_dot.UseVisualStyleBackColor = true;
-            this.button_dot.Click += new System.EventHandler(this.button_dot_Click);
             // 
             // groupBox_keyboard
             // 
@@ -632,7 +599,6 @@
             this.Text = "TNT Layout";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Main_KeyDown);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Main_KeyPress);
-            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Main_KeyUp);
             this.groupBox_abgh.ResumeLayout(false);
             this.groupBox_cdij.ResumeLayout(false);
             this.groupBox_efkl.ResumeLayout(false);
