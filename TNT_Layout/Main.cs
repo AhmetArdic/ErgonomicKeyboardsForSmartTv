@@ -6,13 +6,6 @@ namespace GraduationProject
 {
     public partial class Main : Form
     {
-        private bool upPressed          = false;
-        private bool downPressed        = false;
-        private bool leftPressed        = false;
-        private bool rightPressed       = false;
-        private bool enterPressed       = false;
-        private bool escapePressed      = false;
-
         private const int innerSize = 2;
         private const int outerSize = 3;
 
@@ -63,7 +56,7 @@ namespace GraduationProject
             }
         }
 
-        private void CurrentGroupButtonColorChange(Color color)
+        private void CurrentGroupColorChange(Color color)
         {
             foreach (Control control in currentGroup.Controls)
             {
@@ -88,82 +81,44 @@ namespace GraduationProject
             timer_step.Start();
 
             SelectGroupBoxByTabIndex(GetTabIndex(currentOuterRow, currentOuterColumn, outerSize));
-            CurrentGroupButtonColorChange(Color.LightGray);
+            CurrentGroupColorChange(Color.LightGray);
         }
 
         private void timer_step_Tick(object sender, EventArgs e)
         {
-            if(upPressed)
+            if(!isGroupSelected)
             {
-                if(!isGroupSelected)
-                {
-                    int currentGroupIndex = GetTabIndex(currentOuterRow, currentOuterColumn, outerSize);
-                    CurrentGroupButtonColorChange(SystemColors.Control);
-                    SelectGroupBoxByTabIndex(currentGroupIndex);
-                }
-                else
-                {
-                    int currentButtonIndex = GetTabIndex(currentInnerRow, currentInnerColumn, innerSize);
-                    CurrentButtonColorChange(SystemColors.Control);
-                    SelectButtonByTabIndex(currentButtonIndex);
-                }
-
-                upPressed = false;
+                int currentGroupIndex = GetTabIndex(currentOuterRow, currentOuterColumn, outerSize);
+                CurrentGroupColorChange(SystemColors.Control);
+                SelectGroupBoxByTabIndex(currentGroupIndex);
             }
-            else if(downPressed)
+            else
             {
+                int currentButtonIndex = GetTabIndex(currentInnerRow, currentInnerColumn, innerSize);
+                CurrentButtonColorChange(SystemColors.Control);
+                SelectButtonByTabIndex(currentButtonIndex);
+            }
+
+
+            CurrentGroupColorChange(Color.LightGray);
+
+            if(isGroupSelected)
+            {
+                CurrentButtonColorChange(Color.LightGreen);
+            }
+            else
+            {
+                CurrentGroupColorChange(Color.LightGray);
+            }
+        }
+
+        private void Main_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                Console.WriteLine("Enter");
+
                 if (!isGroupSelected)
-                {
-                    int currentGroupIndex = GetTabIndex(currentOuterRow, currentOuterColumn, outerSize);
-                    CurrentGroupButtonColorChange(SystemColors.Control);
-                    SelectGroupBoxByTabIndex(currentGroupIndex);
-                }
-                else
-                {
-                    int currentButtonIndex = GetTabIndex(currentInnerRow, currentInnerColumn, innerSize);
-                    CurrentButtonColorChange(SystemColors.Control);
-                    SelectButtonByTabIndex(currentButtonIndex);
-                }
-
-                downPressed = false;
-            }
-            else if(leftPressed)
-            {
-                if (!isGroupSelected)
-                {
-                    int currentGroupIndex = GetTabIndex(currentOuterRow, currentOuterColumn, outerSize);
-                    CurrentGroupButtonColorChange(SystemColors.Control);
-                    SelectGroupBoxByTabIndex(currentGroupIndex);
-                }
-                else
-                {
-                    int currentButtonIndex = GetTabIndex(currentInnerRow, currentInnerColumn, innerSize);
-                    CurrentButtonColorChange(SystemColors.Control);
-                    SelectButtonByTabIndex(currentButtonIndex);
-                }
-
-                leftPressed = false;
-            }
-            else if(rightPressed)
-            {
-                if (!isGroupSelected)
-                {
-                    int currentGroupIndex = GetTabIndex(currentOuterRow, currentOuterColumn, outerSize);
-                    CurrentGroupButtonColorChange(SystemColors.Control);
-                    SelectGroupBoxByTabIndex(currentGroupIndex);
-                }
-                else
-                {
-                    int currentButtonIndex = GetTabIndex(currentInnerRow, currentInnerColumn, innerSize);
-                    CurrentButtonColorChange(SystemColors.Control);
-                    SelectButtonByTabIndex(currentButtonIndex);
-                }
-
-                rightPressed = false;
-            }
-            else if(enterPressed)
-            {
-                if(!isGroupSelected)
                 {
                     Console.WriteLine("Grup Seçildi");
 
@@ -176,11 +131,11 @@ namespace GraduationProject
                 {
                     Console.WriteLine("'" + currentButton.Text + "' Tıklandı");
 
-                    if(currentButton.Text == "🡸")
+                    if (currentButton.Text == "🡸")
                     {
                         richTextBox.Text = richTextBox.Text.Substring(0, richTextBox.Text.Length - 1);
                     }
-                    else if(currentButton.Text == "﹈")
+                    else if (currentButton.Text == "﹈")
                     {
                         richTextBox.Text += " ";
                     }
@@ -189,11 +144,11 @@ namespace GraduationProject
                         richTextBox.Text += currentButton.Text;
                     }
                 }
-                
-                enterPressed = false;
             }
-            else if(escapePressed)
+            else if (e.KeyChar == (char)Keys.Escape)
             {
+                Console.WriteLine("Escape");
+
                 if (isGroupSelected)
                 {
                     Console.WriteLine("Gruptan Çıkıldı");
@@ -203,36 +158,6 @@ namespace GraduationProject
 
                     isGroupSelected = false;
                 }
-
-                escapePressed = false;
-            }
-            else
-            {
-            }
-
-            CurrentGroupButtonColorChange(Color.LightGray);
-
-            if(isGroupSelected)
-            {
-                CurrentButtonColorChange(Color.LightGreen);
-            }
-            else
-            {
-                CurrentGroupButtonColorChange(Color.LightGray);
-            }
-        }
-
-        private void Main_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                Console.WriteLine("Enter");
-                enterPressed = true;
-            }
-            else if (e.KeyChar == (char)Keys.Escape)
-            {
-                Console.WriteLine("Escape");
-                escapePressed = true;
             }
             else
             {
@@ -253,8 +178,6 @@ namespace GraduationProject
                 {
                     currentInnerRow--;
                 }
-
-                upPressed = true;
             }
 
             if (e.KeyCode == Keys.Down)
@@ -269,8 +192,6 @@ namespace GraduationProject
                 {
                     currentInnerRow++;
                 }
-
-                downPressed = true;
             }
 
             if (e.KeyCode == Keys.Left)
@@ -285,8 +206,6 @@ namespace GraduationProject
                 {
                     currentInnerColumn--;
                 }
-
-                leftPressed = true;
             }
 
             if (e.KeyCode == Keys.Right)
@@ -301,8 +220,6 @@ namespace GraduationProject
                 {
                     currentInnerColumn++;
                 }
-
-                rightPressed = true;
             }
         }
     }
