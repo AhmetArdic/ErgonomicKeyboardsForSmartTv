@@ -12,12 +12,6 @@ namespace D_Pad
 {
     public partial class Main : Form
     {
-        private bool upPressed          = false;
-        private bool downPressed        = false;
-        private bool leftPressed        = false;
-        private bool rightPressed       = false;
-        private bool enterPressed       = false;
-
         private const int innerSize = 7;
         private const int outerSize = 4;
 
@@ -95,74 +89,30 @@ namespace D_Pad
 
         private void timer_step_Tick(object sender, EventArgs e)
         {
-            if (upPressed)
+            if(currentGroup == null || currentButton == null)
             {
-                if(currentGroup == null)
-                {
-                    return;
-                }
-
-                Console.WriteLine("Buton Değiştirildi");
-
-                currentInnerButtonIndex++;
-                int currentButtonIndex = GetTabIndex(currentInnerButtonIndex, innerSize);
-                CurrentButtonColorChange(SystemColors.Control);
-                SelectButtonByTabIndex(currentButtonIndex);
-
-                upPressed = false;
+                return;
             }
-            else if (downPressed)
+
+            int currentButtonIndex = GetTabIndex(currentInnerButtonIndex, innerSize);
+            CurrentButtonColorChange(SystemColors.Control);
+            SelectButtonByTabIndex(currentButtonIndex);
+
+            int currentGroupIndex = GetTabIndex(currentOuterGroupIndex, outerSize);
+            CurrentGroupColorChange(SystemColors.Control);
+            SelectGroupBoxByTabIndex(currentGroupIndex);
+            SelectButtonByTabIndex(currentInnerButtonIndex);
+
+            CurrentGroupColorChange(Color.LightGray);
+            CurrentButtonColorChange(Color.LightGreen);
+        }
+
+        private void Main_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
             {
-                if (currentGroup == null)
-                {
-                    return;
-                }
+                Console.WriteLine("Enter");
 
-                Console.WriteLine("Buton Değiştirildi");
-
-                currentInnerButtonIndex--;
-                int currentButtonIndex = GetTabIndex(currentInnerButtonIndex, innerSize);
-                CurrentButtonColorChange(SystemColors.Control);
-                SelectButtonByTabIndex(currentButtonIndex);
-
-                downPressed = false;
-            }
-            else if (leftPressed)
-            {
-                if (currentGroup == null)
-                {
-                    return;
-                }
-
-                Console.WriteLine("Grup Değiştirildi");
-
-                currentOuterGroupIndex--;
-                int currentGroupIndex = GetTabIndex(currentOuterGroupIndex, outerSize);
-                CurrentGroupColorChange(SystemColors.Control);
-                SelectGroupBoxByTabIndex(currentGroupIndex);
-                SelectButtonByTabIndex(currentInnerButtonIndex);
-
-                leftPressed = false;
-            }
-            else if (rightPressed)
-            {
-                if (currentGroup == null)
-                {
-                    return;
-                }
-
-                Console.WriteLine("Grup Değiştirildi");
-
-                currentOuterGroupIndex++;
-                int currentGroupIndex = GetTabIndex(currentOuterGroupIndex, outerSize);
-                CurrentGroupColorChange(SystemColors.Control);
-                SelectGroupBoxByTabIndex(currentGroupIndex);
-                SelectButtonByTabIndex(currentInnerButtonIndex);
-
-                rightPressed = false;
-            }
-            else if (enterPressed)
-            {
                 Console.WriteLine("'" + currentButton.Text + "' Tıklandı");
 
                 if (currentButton.Text == "🡸")
@@ -179,23 +129,6 @@ namespace D_Pad
                 {
                     richTextBox.Text += currentButton.Text;
                 }
-
-                enterPressed = false;
-            }
-            else
-            {
-            }
-
-            CurrentGroupColorChange(Color.LightGray);
-            CurrentButtonColorChange(Color.LightGreen);
-        }
-
-        private void Main_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                Console.WriteLine("Enter");
-                enterPressed = true;
             }
             else
             {
@@ -207,25 +140,29 @@ namespace D_Pad
             if (e.KeyCode == Keys.Up)
             {
                 Console.WriteLine("Yukarı");
-                upPressed = true;
+
+                currentInnerButtonIndex++;
             }
 
             if (e.KeyCode == Keys.Down)
             {
                 Console.WriteLine("Aşağı");
-                downPressed = true;
+
+                currentInnerButtonIndex--;
             }
 
             if (e.KeyCode == Keys.Left)
             {
                 Console.WriteLine("Sol");
-                leftPressed = true;
+
+                currentOuterGroupIndex--;
             }
 
             if (e.KeyCode == Keys.Right)
             {
                 Console.WriteLine("Sağ");
-                rightPressed = true;
+
+                currentOuterGroupIndex++;
             }
         }
     }
